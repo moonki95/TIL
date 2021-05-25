@@ -1,6 +1,9 @@
 # TIL
 
 # 면접대비 및 CS 지식 공부
+
+
+**OS**
 1. Process ( 2021.05.24 ~ 2021.05.30)
 2. Thread ( 2021.05.31 ~ 2021.06.06)
 3. Process Synchronization
