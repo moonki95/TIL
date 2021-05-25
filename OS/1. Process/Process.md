@@ -1,4 +1,4 @@
-## 1. 프로세스의 개념
+## **1. 프로세스의 개념**
 
 * **프로세스**
 	* 현재 실행중인 프로그램을 의미
@@ -12,7 +12,7 @@
 	*	데이터 섹션 (전역변수들을 수록)
 	*	힙 (프로세스 실행 중에 동적으로 할당되는 메모리)
 
-## 2. 프로세스의 상태
+## **2. 프로세스의 상태**
 
 * 프로세스는 실행되면서 그 상태가 변하는데, 프로세스 상태는 부분적으로 그 프로세스 현재 활동에 따라서 정의됨
 
@@ -22,9 +22,9 @@
 	* Ready : 프로세스가 처리기에 할당되기를 기다리는 상태
 	* Terminated : 프로세스의 실행이 종료된 상태 
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f1348474-8de1-4c6f-81cd-2ad09e75884f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210524%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210524T062215Z&X-Amz-Expires=86400&X-Amz-Signature=090b9782ef02116936f8b99815e0214b9c3c12bf83eaf0f4a32455446b3ff1da&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+	![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f1348474-8de1-4c6f-81cd-2ad09e75884f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210525%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210525T133759Z&X-Amz-Expires=86400&X-Amz-Signature=b0ce94aa4546f1cf9bd5ca68d3097c4c47a64b4a8a6588d4d0067f77ab618f5c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
-## 3. 프로세스 제어 블록(Process Controll Block)
+## **3. 프로세스 제어 블록(Process Controll Block)**
 
 * **특정 프로세스와 연관된 여러 정보를 수록**
 	* **OS가 관리상 사용하는 정보**
@@ -42,12 +42,124 @@
 	
 * 각 프로세스는 OS에서 프로세스 제어 블록(PCB)에 의해 표현됨
 
-![enter image description here](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c96b2dcb-e096-4b98-b227-6142579c2614/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5/20210524/us-west-2/s3/aws4_request&X-Amz-Date=20210524T062441Z&X-Amz-Expires=86400&X-Amz-Signature=a0f5d72b3d5bce4985bbb241b9f81e150ced146eacee2f67a443379dd7a04dcc&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22)
+	![enter image description here](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c96b2dcb-e096-4b98-b227-6142579c2614/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210525%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210525T133815Z&X-Amz-Expires=86400&X-Amz-Signature=c1ebcc1f1895f1246214841f7175c639d7be2dec4f5c1d72d0956bf996cf524e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
-## 4. 프로세스 스케줄링
+## **4. 프로세스 스케줄링**
 
 * **다중 프로그래밍** - **CPU 이용률을 극대화**시키기 위해 어떤 프로세스가 항상 실행되도록 하는 프로그래밍
 
 * **시분할 프로그래밍** - 프로그램이 실행되는 동안 사용자가 상호 작용할 수 있도록 프로세스들 사이에서 **CPU를 빈번하게 교체하는 것**
 
 * 이 두개의 목적을 달성하기 위해 프로세스 스케줄러가 CPU에서 실행 가능한 여러 프로세스들 중에서 하나의 프로세스를 선택
+
+## **5. 스케줄링 큐**
+
+* 프로세스가 시스템 안에 들어오면 Job queue에 놓여지고, 프로세스들은 메인 메모리에 존재하며, 준비 완료 상태에서 실행을 대기하는 프로세스들은 **준비 완료 큐** 라고 불리는 리스트 상에 유지됨 ( 이 큐는 연결리스트로 유지 )
+* **준비 완료 큐** 의 헤더는 리스트의 첫 번째와 마지막 PCB를 가리키는 포인터를 포함
+* 프로세스들은 각 큐들을 오가며 수행됨
+  
+* 스케줄링 큐 종류
+  * Job queue
+    * 현재 시스템 내에 있는 모든 프로세스들의 집합
+  * Ready queue
+    * 현재 메모리 내에 있으면서 cpu를 잡아 실행되기를 기다리는 프로세스들의 집합
+  * Device queue
+    * I/O device의 처리를 기다리는 프로세스들의 집합
+  
+## **6. 스케줄러**
+
+* 프로세스는 일생 동안에 다양한 스케줄링 큐들 사이를 이주하는데, OS는 스케줄링 목적을 위해 이들 큐에서 반드시 프로세스들을 선택해야함
+
+* **스케줄러 종류**
+  
+  * **장기 스케줄러(Job Scheduler)**
+    * 일괄처리 시스템에서 프로세드들은 대용량 메모리(디스크)에 저장되어 나중에 실행될 때까지 이곳에 유지
+    * 장기 스케줄러가 이 풀에서 프로세스들을 선택하여 실행하기 위해 메모리에 적재
+    * 실행 빈도수가 훨씬 적음(수 분) -> 실행 간격이 비교적 크기 때문에 실행할 프로세스를 선택하는 데 시간을 더 사용
+  * **단기 스케줄러(CPU Scheduler)**
+    * 실행 준비가 완료되어 있는 프로세스들 중에서 선택하여 이들 중 하나에게 CPU를 할당 
+    * CPU를 위해 자주 새로운 프로세스를 선택해야함 ( 100mill/s )
+    * 실행간격이 짧기 때문에 단기 스케줄러는 매우 빨라야함
+  * **중기 스케줄러(Medium-term scheduler)**
+    * 메모리에서 프로세서들을 제거함으로써 다중 프로그래밍의 정도를 완화 -> 차후에 다시 프로세스를 메모리로 불러와서 중단 되었던 지점에서부터 실행을 재개 ( 스와핑 ) 
+
+
+## **7. Context Switching**
+
+* CPU를 다른 프로세스로 교환하려면 이전의 프로세스의 상태를 보관하고 새로운 프로세스의 보관된 상태를 복구하는 작업이 필요한데, 이를 **문맥교환(Context Switching)** 이라고 함
+* Context Switching이 일어나면 커널은 과거 프로세스의 Context를 PCB에 저장, 스케줄 된 새로운 프로세스의 저장된 Context를 복구
+* 문맥 교환이 진행될동안은 시스템에 오버헤드를 줌(아무일도 못하기 때문에)
+* 문맥 교환의 교환 속도는 메모리의 속도, 반드시 복사되어야 하는 레지스터의 수, 특수명령어의 존재에 좌우(기계마다 다름)
+  
+## **8. 프로세스 생성**
+
+* 처음에 pid = 1 인 init 프로세스가 모든 사용자 프로세스의 루트 부모 프로세스 역할을 수행
+  
+* **프로세스의 종류**
+  
+  * 부모 프로세스 - 생성하는 프로세스
+  * 자식 프로세스
+    * 생성된 프로세스
+    * 자신의 임무를 달성하기 위해 자원이 필요함(CPU 시간, 메모리, 파일, 입출력 장치 등)
+    * 이 자원들을 OS로부터 직접 얻거나, 부모 프로세스가 가진 자원의 부분 집합을 사용하도록 제한 or 부모 자원들이랑 공유
+    * 부모 프로세스 자원의 일부분만을 사용하도록 자식 프로세스가 쓸 수 있게 제한하면 자식 프로세스들을 많이 생성하여 시스템을 과부하 상태로 만드는 프로세스 방지 가능
+  * 이와같이 생성된 프로세스로 인해 **트리**를 형성
+
+	![enter image description here](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bd4afe05-5d87-4e3d-8151-925bd2b3314f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210525%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210525T132233Z&X-Amz-Expires=86400&X-Amz-Signature=795a52f185b2ba26e60083836a185745d2214a404ac5c1fde2d8b5c374cb7033&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+  
+* **프로세스 식별자**
+  
+  * pid 라고 부르며, 각 프로세스에게 고유한 값을 가지도록 할당
+  * 이 식별자를 통하여 커널이 유지하고 있는 프로세스의 다양한 속성에 접근하기 위한 식별자로 사용
+
+* **프로세스 생성 과정**
+  
+	1. 새로운 프로세스는 부모 프로세스가 fork() 시스템 호출로 인해 생성되는데, 자식 프로세스는 부모 프로세스의 주소공간의 복사본으로 생성됨. 이렇게 하면서 부모와 자식 프로세스간 통신이 원활하게 됨
+	2. fork()호출하고 한 프로세스가 exec() 시스템콜을 사용하여 자신의 메모리 공간을 새로운 프로그램으로 교체(그 전엔 부모꺼로 가져왔으니깐). 그 이후로 부모, 자식 각자 갈길감
+	3. 자식이 실행하는 동안 부모가 할일이 없으면, 자식이 종료될 때 까지 ready queue에서 자신을 제거하기 위해 wait() 시스템콜을 함
+	4. 자식 프로세스가 종료되면 exit() 시스템콜을 하여 강제로 종료 시킴. 부모 프로세스 역시 마찬가지로 wait() 호출로부터 재개해서 exit() 시스템콜을 통해 끝냄
+
+		![enter image description here](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/43d26b34-8764-494a-930d-b56546105643/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210525%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210525T132349Z&X-Amz-Expires=86400&X-Amz-Signature=c512714c01b57c10fdef370e7dafc2ee12c42ef20f73b3ba9f0bcc5e3ab45089&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+
+## **9. 프로세스 종료**
+
+* 프로세스가 마지막 명령을 수행한 후 운영체제에게 이를 알려줌(exit()이용해서 반환)
+  * 자식 프로세스가 부모 프로세스에게 output data를 보내 프로세스의 각종 자원들이 운영체제에게 반납됨
+
+* **프로세스 종료 방법**
+  
+	1. 자식이 할당된 자원의 한계치를 넘어섰을 때
+	2. 자식에게 할당된 태스크가 더 이상 필요하지 않을 때
+	3. 부모가 exit했는데, 자식이 실행중이라면 OS가 자식이 계속 실행하는것을 허용하지 않을 때
+
+		몇몇 시스템에서는 부모 프로세스가 종료됐는데 자식 프로세스가 존재할 수 없음. 따라서 **연쇄식 종료**를 통해 부모 프로세스가 종료되면 자식 프로세스도 종료하게 함
+
+* 좀비 프로세스 & 고아 프로세스
+	* 프로세스가 종료되면 사용하던 자원은 OS가 되찾아 가는데, 프로세스의 종료 상태가 저장되는 프로세스 테이블은 부모 프로세스가 wait()를 호출할 때까지 남아 있게되는데, 이렇게 종료되었지만 부모 프로세스가 아직 wait() 호출을 하지 않은 프로세스를 **좀비 프로세스**라고 함
+	* 부모 프로세스가 wait()를 호출하는 대신 종료한다면 자식 프로세스가 남아있기 때문에 **고아 프로세스**상태가 됨
+    	* 이를 해결하기 위해 새로운 부모 프로세스로 init 프로세스를 지정
+    	* 주기적으로 init 프로세스가 wait()를 호출하여 고아 프로세스의 종료 상태를 수집하고 프로세스 식별자와 프로세스 테이블 항목 반환
+
+* 프로세스와 관련한 시스템 콜
+  1. fork() : 자식프로세스 생성(복사)
+  2. exec() : 완전히 새로운 프로그램으로 덮어씌우는 것
+  3. wait() : 자식이 끝날때까지 대기
+  4. exit() : 자원반납(프로세스 종료), 부모에게 끝난거 알려줌
+
+* wait() 시스템 콜
+  * 프로세스 A가 wait() 시스템 콜을 호출하면
+    * 커널은 child가 종료될 때까지 프로세스 A를 sleep 시킴(block)
+    * Child process가 종료되면 커널은 프로세스 A를 깨움(ready)
+
+* exit() 시스템 콜
+  * 프로세스의 종료
+    * 자발적 종료
+      * 마지막 statement 수행 후 exit() 시스템 콜을 통해 종료
+      * 프로그램에 명시적으로 적어주지 않아도 main 함수가 리턴되는 위치에 컴파일러가 넣어줌
+    * 비자발적 종료
+      * 부모 프로세스가 자식 프로세스를 강제 종료시킴
+        * 자식 프로세스가 한계치를 넘어서는 자원 요청
+        * 자식에게 할당된 태스크가 더 이상 필요하지 않음
+      * 키보드로 kill, break 등을 친 경우
+        * 부모가 종료하는 경우
+          * 부모 프로세스가 종료하기 전에 자식들이 먼저 종료
