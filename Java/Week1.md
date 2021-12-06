@@ -28,6 +28,14 @@
      * Execution engine을 통해 해석된 프로그램이 Runtime Data Area에 배치되어 수행이 이루어짐
      * 경우에 따라 Garbage Collection 등의 작업이 수행될 수 있음 
 * **바이트코드란 무엇인가**
+  * Java Bytecode
+    * JVM이 이해할 수 있는 언어로 변환된 자바 소스코드
+    * 확장자는 .class
+    * JVM만 설치되어 있으면 어느 운영체제에서도 실행 가능
 * **JIT 컴파일러란 무엇이며 어떻게 동작하는지**
+  * JIT(Just-In-Time) 컴파일러
+    * Java Bytecode를 CPU로 직접보낼 수 있는 명령어로 바꾸는 프로그램
+  * JIT 컴파일러 작동 방식
+    * 
 * **JVM 구성 요소**
 * **JDK와 JRE의 차이**
