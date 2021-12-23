@@ -11,9 +11,12 @@ class HelloActivity : Activity(){
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hello)
-
+        
         btnHello.setOnClickListener(){
             Toast.makeText(this, "토스트미시지",Toast.LENGTH_SHORT).show()
         }
     }
 }
+
+
+
