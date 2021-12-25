@@ -92,37 +92,37 @@
 
   * Common
     * 텍스트, 버튼, 레이아웃 등 일반적으로 많이 사용되는 것들을 모아놓은 메뉴
-    * <img src="/Kot_study/images/Common.png" width="500" height="370">
+     <img src="/Kot_study/images/Common.png" width="500" height="370">
   * Text
     * 글자를 화면에 나타내거나 입력받을 수 있는 위젯을 모아놓은 메뉴
     * 글자를 보여주는 기능만 있는 텍스트뷰, 글자를 입력받을 수 있는 에디트텍스트가 있음 ( 언더바의 유무 )
-    * <img src="/Kot_study/images/Text.png" width="500" height="370">
+     <img src="/Kot_study/images/Text.png" width="500" height="370">
   * Buttons
     * 사용자로부터 클릭 or 터치 관련 이벤트를 받을 수 있는 위젯의 모음
-    * <img src="/Kot_study/images/Butoon.png" width="500" height="370">
+     <img src="/Kot_study/images/Button.png" width="500" height="370">
   * Widgets
     * 이미지, 웹 사이트, 별점 표시, 진행 상태 등의 정보를 화면에 그리는 위젯 모음
-    * <img src="/Kot_study/images/Widgets.png" width="500" height="370">
+     <img src="/Kot_study/images/Widgets.png" width="500" height="370">
   
 ## 텍스트뷰
   * 텍스트뷰는 화면에 텍스트를 출력하는 가장 기본적인 위젯
   * 사용할 텍스트 정의 및 적용 - text
     * text 속성에 직접 입력할 수도 있지만 권장하지는 않음
     * 프로젝트 탐색기의 뷰를 Android 상태에서 app-res-values 디렉토리의 strings.xml에 넣어놓고 작업함
-    * <img src="/Kot_study/images/strings.png" width="500" height="370">
-    * <img src="/Kot_study/images/strings2.png" width="500" height="370">
+     <img src="/Kot_study/images/strings.png" width="500" height="370">
+     <img src="/Kot_study/images/strings2.png" width="500" height="370">
   
   * 텍스트 색상 지정하기 - textColor
     * 텍스트의 색상을 지정할 수 있는 속성
     * RGB를 기준으로 0~255 숫자를 16진수로 입력해서 표현
     * 색상도 문자열과 같이 직접입력하지 않고 colors.xml에 작성된 값을 참조해서 사용
-    * <img src="/Kot_study/images/text_color.png" width="500" height="370">
+     <img src="/Kot_study/images/text_color.png" width="500" height="370">
 
   * 텍스트 크기 지정하기 - textSize
     * 텍스트의 크기를 지정하는 속성
     * 보통 dp, px, sp등과 같은 단위를 사용하는데, 텍스트뷰 및 에디트텍스트는 주로 sp를 사용 ( 같은 해상도에서 문자열의 크기를 다르게 사용하는 경우가 있기 때문 )
     * 크기도 문자열,색상과 같이 직접입력하지 않고 dimens.xml이라는 파일에 입력 후 참조
-    * <img src="/Kot_study/images/text_size.png" width="500" height="370">
+     <img src="/Kot_study/images/text_size.png" width="500" height="370">
 
   * 텍스트 스타일 지정하기 - textStyle
     * 텍스트의 스타일을 설정하는 속성 ( normal, bold, italic )
@@ -147,7 +147,7 @@
 
   * 텍스트 글꼴 지정하기 - fontFamily
     * 글꼴을 지정하는 속성으로 기본으로 제공하는 글꼴 이외에 외부 폰트도 지정할 수 있음
-    * <img src="/Kot_study/images/font_family.png.png" width="500" height="370">
+     <img src="/Kot_study/images/font_family.png" width="500" height="370">
 
   * 비율로 글꼴 크기 지정하기 - ems
     * 텍스트뷰의 크기를 나타낼 때 현재 글꼴의 크기를 기준으로 설정하는 상대값
@@ -169,10 +169,10 @@
     * 바인딩 처리하여 "addTextChangedListener" 으로 실시간으로 처리
 
   * 클릭하면 사라지는 미리보기 - hint
-    * <img src="/Kot_study/images/hint.png" width="500" height="370">
+     <img src="/Kot_study/images/hint.png" width="500" height="370">
   
   * 키보드 모양 설정하기 - inputType
-    * <img src="/Kot_study/images/inputtype.png" width="500" height="370">
+     <img src="/Kot_study/images/inputtype.png" width="500" height="370">
   
 ## 이미지버튼
   * 백그라운드 이미지 위에 아이콘과 같은 이미지를 추가할 수 있음
@@ -208,21 +208,21 @@
 ## 리소스 다루기
 
   ### drawable과 단위
-    * DPI
-      * DPI(Dots Per Inch) 는 가로세로 1인치의 정사각형 공간에 들어 있는 픽셀의 숫자를 나타내는 단위
-      * 안드로이드는 기본적으로 160DPI 사용
-      * 요새는 xxxhdpi(640DPI) 사용
-    * DP
-      * DP(Density-independent Pixels)는 안드로이드에서 사용하는 독립적 수치 단위
-      * 해상도와 관계없이 동일한 크기로 화면에 표시하기 위해 사용
-    * SP
-      * 문자열 크기를 나타내기 위해 사용하는 단위
-      * 줌인이나 줌아웃시에 다른 위젯에는 영향을 주지 않고 해당 위젯의 글자만 커지거나 작아지게 할 수 있음
+  * DPI
+    * DPI(Dots Per Inch) 는 가로세로 1인치의 정사각형 공간에 들어 있는 픽셀의 숫자를 나타내는 단위
+    * 안드로이드는 기본적으로 160DPI 사용
+    * 요새는 xxxhdpi(640DPI) 사용
+  * DP
+    * DP(Density-independent Pixels)는 안드로이드에서 사용하는 독립적 수치 단위
+    * 해상도와 관계없이 동일한 크기로 화면에 표시하기 위해 사용
+  * SP
+    * 문자열 크기를 나타내기 위해 사용하는 단위
+    * 줌인이나 줌아웃시에 다른 위젯에는 영향을 주지 않고 해당 위젯의 글자만 커지거나 작아지게 할 수 있음
 
-    * drawable 디렉토리
-      * 보통 DPI별로 디렉토리를 만들어서 작업함
+  * drawable 디렉토리
+    * 보통 DPI별로 디렉토리를 만들어서 작업함
 
   ### mipmap 앱 아이콘 사용하기
-    * 앱의 아이콘에 사용하는 용도로 mipmap 디렉토리를 사용
-    * 일반 이미지는 drawable폴더에 넣고, 앱 아이콘은 mipmap에 저장
-    * mipmap도 drawable처럼 스마트폰 해상도에 맞는 폴더에 맞게 작업
+  * 앱의 아이콘에 사용하는 용도로 mipmap 디렉토리를 사용
+  * 일반 이미지는 drawable폴더에 넣고, 앱 아이콘은 mipmap에 저장
+  * mipmap도 drawable처럼 스마트폰 해상도에 맞는 폴더에 맞게 작업
