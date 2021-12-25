@@ -30,7 +30,7 @@
      * 안드로이드의 기본 레이아웃
      * Constraint는 다른 오브젝트를 참조하는 연계작업을 통해 자신의 모양이 결정되는 자동화 컨트롤러
      * 간단한 제약조건(Constraint) 설정만으로 전체 화면을 쉽게 구성할 수 있음
-     <img src="/Kot_study/images/constraint.png" width="700" height="370">
+     * <img src="/Kot_study/images/constraint.png" width="700" height="370">
      * **크기조절 핸들러**
        * Wrap Content
          * 위젯의 크기를 내용물의 크기에 맞춰줌
