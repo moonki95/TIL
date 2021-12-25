@@ -99,7 +99,7 @@
      <img src="/Kot_study/images/Text.png" width="500" height="370">
   * Buttons
     * 사용자로부터 클릭 or 터치 관련 이벤트를 받을 수 있는 위젯의 모음
-     <img src="/Kot_study/images/Button.png" width="500" height="370">
+    * <img src="/Kot_study/images/Button.png" width="500" height="370">
   * Widgets
     * 이미지, 웹 사이트, 별점 표시, 진행 상태 등의 정보를 화면에 그리는 위젯 모음
      <img src="/Kot_study/images/Widgets.png" width="500" height="370">
@@ -169,10 +169,10 @@
     * 바인딩 처리하여 "addTextChangedListener" 으로 실시간으로 처리
 
   * 클릭하면 사라지는 미리보기 - hint
-     <img src="/Kot_study/images/hint.png" width="500" height="370">
+    * <img src="/Kot_study/images/hint.png" width="500" height="370">
   
   * 키보드 모양 설정하기 - inputType
-     <img src="/Kot_study/images/inputtype.png" width="500" height="370">
+     * <img src="/Kot_study/images/inputtype.png" width="370" height="630">
   
 ## 이미지버튼
   * 백그라운드 이미지 위에 아이콘과 같은 이미지를 추가할 수 있음
