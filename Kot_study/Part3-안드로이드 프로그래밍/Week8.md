@@ -8,9 +8,9 @@
 ### **권한을 주는 방법**
 
 * 권한 명세(AndroidManifest.xml)
-  * <uses-permission />태그를 이용
+  * < uses-permission />태그를 이용
 * 기능 명세 
-  * <uses-feature /> 태그를 이용
+  * < uses-feature /> 태그를 이용
 
 
 ## **권한의 보호 수준**
@@ -19,10 +19,10 @@
   * 일반 권한
     * AndroidManifest.xml파일에 명세하면 사용자에게 권한 승인을 묻는 팝업창을 보여줌
     * 인터넷 사용, 알람 설정 등
-    * <users-permission android:name = "android.permission.~"/>
+    * < users-permission android:name = "android.permission.~"/>
   * 위험 권한
     * 개인정보와 관련된 것에 액세스 하려는 등에 대한 권한
-    * <uses-permission android:name = "android.permission.~"/>
+    * < uses-permission android:name = "android.permission.~"/>
   * 서명 권한
     * 앱이 권한을 정의하는 앱과 동일한 인증서로 서명된 경우 시스템은 권한을 자동으로 부여
 
